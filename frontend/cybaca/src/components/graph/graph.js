@@ -13,6 +13,7 @@ const speakLine=[
   { x: 2, y: 60 },
   { x: 3, y: 40 },
   { x: 4, y: 20 },
+  { x: 5, y: 0 }
 ];
 const dataLine=[
   { x: 2, y: 0},
