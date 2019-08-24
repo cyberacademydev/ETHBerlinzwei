@@ -1,28 +1,27 @@
 # Cybaca frontend
 ### Run :
-    Install all dependencies 
-    ```
+Install all dependencies 
+
     npm install
-    ```
-    run app
-    ```
+
+Run app
+
     yarn start
-    ```
+
 ### Docker :
 
-    Build container:
-    ```
+Build container:
+
     docker build --rm -t cybaca:latest .
-    ```
-    Run container
-    ```
+
+Run container
+
     docker run --rm  -p 3000:3000 --name cybaca cybaca:latest
-    ```
-    For run as demon add
-    ```
+
+For run as demon add
+
     -d
-    ```
-    Read logs from container
-    ```
+
+Read logs from container
+
     docker logs cybaca
-    ```
