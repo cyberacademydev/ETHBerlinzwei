@@ -10,10 +10,10 @@ body {
     margin: 0;
     overflow-x: hidden;
     color: black;
+    font-family: PT Mono;
 }
 html {
     overflow-x: hidden;
-    font-family: PT Mono;
 }
 
 p {
@@ -102,7 +102,7 @@ p.title-func {
 
 p.title-func span.italic {
     color: #96d9bd;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 .padding-left-45 {
