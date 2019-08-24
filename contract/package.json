@@ -1,0 +1,21 @@
+{
+  "name": "cybaca",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {},
+  "keywords": [],
+  "author": "@litvintech",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.3.0",
+    "bn-chai": "^1.0.1",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eth-gas-reporter": "^0.1.12",
+    "ethjs-unit": "^0.1.6",
+    "mocha": "^5.2.0",
+    "openzeppelin-test-helpers": "^0.4.2",
+    "truffle-hdwallet-provider": "^1.0.16"
+  }
+}
