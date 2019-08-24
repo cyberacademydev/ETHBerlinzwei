@@ -10,10 +10,11 @@ import{
   TalksAgenda,
   BuyButton,
   ConfirmButton,
-  Dots,
+  Dots
 } from './components';
 import './App.css';
 import './main.css';
+import Graph from './components/graph/graph'
 
 const getDateString = uint256 => {
   const date = new Date(uint256 * 1000);
@@ -183,6 +184,7 @@ class App extends PureComponent {
       );
       const funds = this.props.web3.utils.fromWei(rawFunds);
 
+      debugger
       if (!speakers || !organizers || !rawFunds) {
         throw new TypeError('invalid value');
       }
@@ -191,9 +193,12 @@ class App extends PureComponent {
         organizers,
         funds
       };
+
+
       return this.setState({ shares });
     } catch (e) {
       throw new Error();
+      console.log('error', e)
     }
   };
 
@@ -293,11 +298,15 @@ class App extends PureComponent {
           dots={<Dots />} />
         <p className="warning">{warning}</p>
         {!purchasedTickets && (
-          <p style={{ color: '#90d371' }}>
+          <div style={{ color: '#90d371' }}>
             Checking purchase
             <Dots />
-          </p>
+          </div>
         )}
+
+        <Graph />
+
+
         {userHasTicket ? (
           <ConfirmButton
             web3={this.props.web3}
