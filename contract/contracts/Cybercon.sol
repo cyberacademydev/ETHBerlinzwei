@@ -443,6 +443,40 @@ contract Cybercon is Ownable, ERC721Full {
         emit UpdatedWorkshopsGrid(_grid);
     }
 
+    function getTalkBySpeaker(address speaker)
+        external
+        view
+        returns(
+            string memory,
+            string memory,
+            string memory,
+            uint256,
+            uint256,
+            address,
+            uint256,
+            bool,
+            ApplicationStatus,
+            string memory
+        )
+    {
+        require(_id < uint256(speakersTalks.length), "out of index of speakers");
+        for (uint256 i = 0; i < speakersTalks.length; i++){
+                if (speakersTalks[i].speakerAddress == speaker) 
+                    return(
+                        speakersTalks[i].speakerName,
+                        speakersTalks[i].descSpeaker,
+                        speakersTalks[i].deskTalk,
+                        speakersTalks[i].duration,
+                        speakersTalks[i].deposit,
+                        speakersTalks[i].speakerAddress,
+                        speakersTalks[i].appliedAt,
+                        speakersTalks[i].checkedIn,
+                        speakersTalks[i].status,
+                        speakersTalks[i].proof
+                    );
+            }
+    }
+
     function getTalkById(uint256 _id)
         external
         view
@@ -558,9 +592,9 @@ contract Cybercon is Ownable, ERC721Full {
         uint256 currentDiscount = blocksPassed.mul(bidBlockDecrease);
 
         if (currentDiscount < (initialPrice - minimalPrice)) {
-            return initialPrice.sub(currentDiscount);
+            return minimalPrice.add(currentDiscount);
         } else {
-            return minimalPrice;
+            return initialPrice;
         }
     }
 
@@ -633,6 +667,14 @@ contract Cybercon is Ownable, ERC721Full {
         uint256 shares = SPEAKERS_START_SHARES.sub(SPEAKERS_END_SHARES).mul(mul).div(100);
 
         return SPEAKERS_END_SHARES.add(shares);
+    }
+
+    function getSpeakersStartShares()
+        public
+        view
+        returns(uint256)
+    {
+        return SPEAKERS_START_SHARES
     }
 
     function getSpeakersShares()
