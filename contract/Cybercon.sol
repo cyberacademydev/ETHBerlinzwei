@@ -1,10 +1,18 @@
 pragma solidity 0.5.0;
 
 import "openzeppelin-solidity/contracts/token/ERC721/ERC721Token.sol";
+import "zeppelin-solidity/contracts/ownership/Ownable.sol";
 
-contract Cybercon is ERC721Token {
-    constructor (string _name, string _symbol) public
-        ERC721Token(_name, _symbol)
+contract Cybercon is ERC721Token, Ownable {
+     constructor(
+        uint256[] memory _timingsSet,
+        uint256[] memory _economySet,
+        uint256[] memory _eventSet,
+        string memory _name,
+        string memory _symbol,
+        string memory _description,
+        string memory _place
+    ) ERC721Full(_name, _symbol)
     {
     }
 
