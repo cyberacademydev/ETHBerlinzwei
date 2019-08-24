@@ -49,7 +49,7 @@ class App extends PureComponent {
     } = this.state;
   return (
     <main className="block-body">
-    {/* {!this.props.web3 && <div>Metamask is locked!</div>} */}
+    {!this.props.web3 && <div>Metamask is locked!</div>}
     <div className="block-container-site">
       <Nums amount={62} />
       <div className="block-right-container-site">
