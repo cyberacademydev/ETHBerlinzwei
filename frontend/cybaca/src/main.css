@@ -25,6 +25,7 @@ p {
 }
 button:disabled {
     color: darkgray;
+    cursor: not-allowed;
 }
 .block-body {
     width: 100%;

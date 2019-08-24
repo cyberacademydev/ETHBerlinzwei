@@ -307,8 +307,7 @@ class App extends PureComponent {
         )}
 
         <Graph />
-        <QrReader />
-        <QRGenerator />
+
 
         {userHasTicket ? (
           <ConfirmButton
