@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import {ADRESS} from '../../utils/static'
 
 export class ApplyForm extends Component {
   constructor(props) {
@@ -12,7 +13,12 @@ export class ApplyForm extends Component {
         proof: ''
       }
     };
-    this.smart = '0x61B81103e716B611Fff8aF5A5Dc8f37C628efb1E';
+    // this.smart = '0x61B81103e716B611Fff8aF5A5Dc8f37C628efb1E';
+    this.smart = ADRESS;
+  }
+
+  componentDidMount() {
+
   }
 
   onChange = e => {
@@ -23,11 +29,11 @@ export class ApplyForm extends Component {
 
   apply = e => {
     e.preventDefault();
-    console.log(this.state.data);
     this.getAccount();
   };
 
   getAccount = async () => {
+    console.log('get account')
     const { web3, setWarning } = this.props;
     if (web3.currentProvider.host)
       return setWarning(
@@ -73,13 +79,13 @@ export class ApplyForm extends Component {
               .encodeABI()
           })
           .on('transactionHash', h => {
-            console.log(h);
+            console.log('transactionHash', h);
           })
           .on('confirmation', (confirmationNumber, receipt) => {
-            console.log(confirmationNumber, receipt);
+            console.log('confirmation', confirmationNumber, receipt);
           })
           .on('error', err => {
-            console.log(err);
+            console.log('error', err);
           });
       } catch (e) {
         console.log(e);
@@ -140,6 +146,10 @@ export class ApplyForm extends Component {
             />
             <span className="right-input">”</span>
           </label>
+
+
+
+
           <label
             htmlFor="duration"
             className="title-code padding-left-45"
@@ -147,14 +157,23 @@ export class ApplyForm extends Component {
           >
             duration =&nbsp;
             <span className="left-input">“</span>
-            <input
-              type="text"
-              name="duration"
-              value={data.duration}
-              onChange={this.onChange}
-            />
+            {/*<input*/}
+            {/*  type="text"*/}
+            {/*  name="duration"*/}
+            {/*  value={data.duration}*/}
+            {/*  onChange={this.onChange}*/}
+            {/*/>*/}
+            <select className={'s-duration'} name="duration" id="duration" value={data.duration} onChange={this.onChange}>
+              {[5, 10, 15, 20, 25, 30, 35, 40, 45,50, 55, 60].map((item, key) => {
+                return <option key={key} value={item}>{item}</option>
+              })}
+            </select>
+
             <span className="right-input">”</span>
           </label>
+
+
+
           <label
             htmlFor="proof"
             className="title-code padding-left-45"

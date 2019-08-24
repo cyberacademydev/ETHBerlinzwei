@@ -22,6 +22,23 @@
 .App-link {
   color: #61dafb;
 }
+.s-duration {
+  width: 150px;
+  background: black;
+  background-position: center right;
+  background-repeat: no-repeat;
+  border: none;
+  border-bottom: 2px solid #abb912;
+  color: #90d371;
+  font-size: 16px;
+  margin: 0;
+  overflow: hidden;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  outline: none;
+}
 
 @keyframes App-logo-spin {
   from {
