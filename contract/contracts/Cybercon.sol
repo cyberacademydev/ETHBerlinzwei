@@ -4,6 +4,7 @@ import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 import "openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol";
 import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 import "openzeppelin-solidity/contracts/utils/Address.sol";
+import "openzeppelin-solidity/contracts/cryptography/ECDSA.sol";
 
 
 contract Cybercon is Ownable, ERC721Full {
@@ -11,6 +12,7 @@ contract Cybercon is Ownable, ERC721Full {
     using SafeMath for uint256;
     using Address for address;
     using Address for address payable;
+    using ECDSA for bytes32;
 
     enum ApplicationStatus {Applied, Accepted, Declined}
 
@@ -330,26 +332,36 @@ contract Cybercon is Ownable, ERC721Full {
         emit TalkSelfDeclined(_talkId);
     }
 
-    function checkinMember(uint256 _ticketId)
+    function checkinMember(
+        uint256 _ticketId,
+        bytes32 _hash,
+        bytes memory _signature
+    )
         external
+        onlyOwner
         duringEvent
     {
-        require(membersTickets[_ticketId].bidderAddress == msg.sender, "member should make self check in");
+        require(membersTickets[_ticketId].bidderAddress == _hash.recover(_signature), "member should make self check in");
         membersTickets[_ticketId].checkedIn = true;
 
         emit MemberCheckin(_ticketId);
     }
 
-    function checkinSpeaker(uint256 _talkId)
+    function checkinSpeaker(
+        uint256 _ticketId,
+        bytes32 _hash,
+        bytes memory _signature
+    )
         external
         onlyOwner
         duringEvent
     {
+        address speakerAddress = speakersTalks[_talkId].speakerAddress;
+        require(speakerAddress == _hash.recover(_signature), "speaker should make self check in");
         require(speakersTalks[_talkId].checkedIn == false, "speaker shouldn't be checked in before");
         require(speakersTalks[_talkId].status == ApplicationStatus.Accepted, "speaker should be accepted before");
 
         uint256 bidId = totalSupply();
-        address speakerAddress = speakersTalks[_talkId].speakerAddress;
         super._mint(speakerAddress, bidId);
         ticketByAddressIndex[speakerAddress] = bidId; //?
         speakersTalks[_talkId].checkedIn = true;
