@@ -53,11 +53,11 @@ class App extends PureComponent {
     <div className="block-container-site">
       <Nums amount={62} />
       <div className="block-right-container-site">
-        <img
+        {/* <img
           src="https://ipfs.io/ipfs/QmPMK9NBnx7n2xyXcNtcanrVvUEZAfUfQa7f8Cq9yPi2L5"
           alt=""
           className="girl"
-        />
+        /> */}
         <p className="title-func">
           <span className="italic">contract</span> cyberc0n():
         </p>
@@ -66,11 +66,11 @@ class App extends PureComponent {
           target="_blank"
           href="https://steemit.com/web3/@hipster/invitation-to-cyberc0n-first-distributed-search-conference-435e5d0bec06dest"
         >
-          <img
+          {/* <img
             src="https://ipfs.io/ipfs/QmSQuSbrLrrUK4qUUsHPrk68WaBH6DFerkUhxf9zJZaSSS"
             alt="logo"
             className="logo-top padding-left-45"
-          />
+          /> */}
         </a>
         <WhatWhereWhen
           what="Distributed search and Web3 conference"
@@ -116,11 +116,11 @@ class App extends PureComponent {
       </div>
     </div>
     <div className="link-cuber">
-      <img
+      {/* <img
         src="https://ipfs.io/ipfs/QmPMtBXQ8NbKDMTrCV7gTJSgnpZcf7XBP2vR3X3ZCQ9dZe"
         alt="Cyber academy link"
         className="logo-cuber"
-      />
+      /> */}
     </div>
 
   </main>

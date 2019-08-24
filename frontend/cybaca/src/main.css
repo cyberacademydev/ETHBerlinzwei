@@ -1,26 +1,8 @@
 @font-face {
-    font-family: Menlo;
-    src: url("https://ipfs.io/ipfs/QmYDyKE1xp1QUWiZiFYVwi6U2Ggmavhs7Qyo1bgSv1CsRg") format("truetype");
-    font-weight: 300;
-    font-style: normal
-}
-@font-face {
-    font-family: Menlo;
-    src: url("https://ipfs.io/ipfs/QmVnPDxhsqqcfkojb9a7TGfDUAdZC9wTLQD5jynYzEjJZo") format("truetype");
+    font-family: PT Mono;
+    src: url('./fonts/PTMono-Regular.ttf') format("truetype");
     font-weight: 400;
     font-style: normal
-}
-@font-face {
-    font-family: Menlo;
-    src: url("https://ipfs.io/ipfs/QmQsk4eKo2h2yhfJA9tv2GWhCn19XmYEGg4cSGadRy4NkN") format("truetype");
-    font-weight: 300;
-    font-style: italic;
-}
-@font-face {
-    font-family: Menlo;
-    src: url("https://ipfs.io/ipfs/QmS4E5QSAiHYNzMJv2V5qNgFghg2xGWUYSqZJoM7zP1U25") format("truetype");
-    font-weight: 400;
-    font-style: italic;
 }
 
 body {
@@ -31,7 +13,7 @@ body {
 }
 html {
     overflow-x: hidden;
-    font-family: Menlo;
+    font-family: PT Mono;
 }
 
 p {
@@ -39,6 +21,7 @@ p {
     margin-block-end: 0;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+   
 }
 button:disabled {
     color: darkgray;
