@@ -61,30 +61,16 @@ export class ApplyForm extends Component {
   setMe = (account) => {
     const { web3, contract, deposit } = this.props;
     try {
+      contract.methods.getTalkBySpeaker(account).call()
+          .then(function(result) {
+            console.log("Zombie 15: " + JSON.stringify(result));
+          })
+          .catch(e => {
+            console.log(e)
+          });
 
-
-      // web3.eth
-      //     .sendTransaction({
-      //       from: account,
-      //       to: this.smart,
-      //       data: contract.methods
-      //           .getTalkById(
-      //               1
-      //           )
-      //           .encodeABI()
-      //     })
-      //     .on('transactionHash', h => {
-      //
-      //     })
-      //     .on('confirmation', (confirmationNumber, receipt) => {
-      //       debugger
-      //     })
-      //     .on('error', err => {
-      //       console.log('error', err);
-      //     });
     } catch (e) {
       console.log(e);
-      this.setState({loading: false})
     }
   }
 
