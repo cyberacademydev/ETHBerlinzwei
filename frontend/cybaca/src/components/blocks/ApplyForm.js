@@ -170,7 +170,7 @@ export class ApplyForm extends Component {
             />
             <span className="right-input">”</span>
           </label>
-          <p className="title-code padding-left-45">
+          <div className="title-code padding-left-45">
             minimal speaker deposit =
             <span className="string">
               &nbsp;
@@ -179,7 +179,7 @@ export class ApplyForm extends Component {
                 : this.props.dots}{' '}
               ETH
             </span>
-          </p>
+          </div>
           <button
             className="block-button-white"
             style={{ margin: '35px 0 0 45px' }}
