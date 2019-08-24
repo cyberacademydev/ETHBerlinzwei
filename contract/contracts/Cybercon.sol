@@ -580,9 +580,9 @@ contract Cybercon is Ownable, ERC721Full {
         uint256 currentDiscount = blocksPassed.mul(bidBlockDecrease);
 
         if (currentDiscount < (initialPrice - minimalPrice)) {
-            return initialPrice.sub(currentDiscount);
+            return minimalPrice.add(currentDiscount);
         } else {
-            return minimalPrice;
+            return initialPrice;
         }
     }
 
@@ -664,7 +664,7 @@ contract Cybercon is Ownable, ERC721Full {
     {
         return SPEAKERS_START_SHARES
     }
-    
+
     function getSpeakersShares()
         public
         view
