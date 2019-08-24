@@ -80,8 +80,8 @@ export class ApplyForm extends Component {
               proof: result[9]
             }
 
-            // self.setState({data: data, sent: !!result[0], checked: result[7],  approved: Number(result[8]), loading: false})
-            self.setState({data: data, sent: !!result[0], checked: false,  approved: 1, loading: false})
+            self.setState({data: data, sent: !!result[0], checked: result[7],  approved: Number(result[8]), loading: false})
+            // self.setState({data: data, sent: !!result[0], checked: false,  approved: 1, loading: false})
           })
           .catch(e => {
             self.setState({loading: false})
