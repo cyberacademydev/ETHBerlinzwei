@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import waitForWeb3 from './waitForWeb3';
 import { abi } from '../../utils/abi';
+import { ADRESS } from '../../utils/static';
 
 const injectWeb3 = InnerComponent =>
   class extends PureComponent {
@@ -12,10 +13,12 @@ const injectWeb3 = InnerComponent =>
         loading: true
       };
       this.getWeb3 = this.getWeb3.bind(this);
-      this.smart = '0x61B81103e716B611Fff8aF5A5Dc8f37C628efb1E';
+      // this.smart = '0x61B81103e716B611Fff8aF5A5Dc8f37C628efb1E';
+      this.smart = ADRESS;
     }
 
     componentDidMount() {
+        console.log('ADRESS', ADRESS)
       this.getWeb3().then(() => this.setState({ loading: false }));
     }
 

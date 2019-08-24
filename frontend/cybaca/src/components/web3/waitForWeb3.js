@@ -12,7 +12,8 @@ const resolveWeb3 = resolve => {
   } else {
     web3js = new Web3();
     web3js.setProvider(
-      new web3js.providers.HttpProvider('https://mainnet.infura.io')
+      // new web3js.providers.HttpProvider('https://mainnet.infura.io')
+      new web3js.providers.HttpProvider('https://rinkeby.infura.io')
     );
   }
 

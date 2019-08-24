@@ -15,6 +15,8 @@ import{
 import './App.css';
 import './main.css';
 import Graph from './components/graph/graph'
+import QrReader from './components/qr-reader/qrReader'
+import QRGenerator from './components/qr-generator/qrGenerator'
 
 const getDateString = uint256 => {
   const date = new Date(uint256 * 1000);
@@ -305,7 +307,8 @@ class App extends PureComponent {
         )}
 
         <Graph />
-
+        <QrReader />
+        <QRGenerator />
 
         {userHasTicket ? (
           <ConfirmButton
