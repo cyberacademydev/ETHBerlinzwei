@@ -1,13 +1,52 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import{
   Nums,
+  WhatWhereWhen,
+  Ticket,
+  ApplyForm,
+  Shares,
+  TalksAgenda,
+  BuyButton,
+  ConfirmButton,
   Dots,
 } from './components';
 import './App.css';
 import './main.css';
 
 
-function App() {
+class App extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      shares: {},
+      tickets: {
+        price: '1',
+        amount: '125'
+      },
+      data: {
+        place: 'test, test',
+        startTime: 'test test, 1',
+      },
+      deposit: '',
+      warning: '',
+      schedule: null,
+      talks: {},
+      purchasedTickets: null,
+      userHasTicket: false,
+      ticket: null
+    };
+  }
+  render (){
+    const {
+      data,
+      tickets,
+      shares,
+      warning,
+      deposit,
+      talks,
+      userHasTicket,
+      purchasedTickets
+    } = this.state;
   return (
     <main className="block-body">
     {/* {!this.props.web3 && <div>Metamask is locked!</div>} */}
@@ -20,7 +59,7 @@ function App() {
           className="girl"
         />
         <p className="title-func">
-          {/* <span className="italic">contract</span> cyberc0n(): */}
+          <span className="italic">contract</span> cyberc0n():
         </p>
         <a
           rel="noopener noreferrer"
@@ -33,23 +72,25 @@ function App() {
             className="logo-top padding-left-45"
           />
         </a>
-        {/* <WhatWhereWhen
+        <WhatWhereWhen
           what="Distributed search and Web3 conference"
           data={data}
           dots={<Dots />}
-        /> */}
+        />
         <p className="title-func" style={{ marginTop: '28px' }}>
           <span className="italic">buy ticket</span> ():
         </p>
-        {/* <Ticket capacity="146" tickets={tickets} dots={<Dots />} /> */}
-        {/* <p className="warning">{warning}</p> */}
-        {/* {!purchasedTickets && (
+        <Ticket capacity="146"
+         tickets={tickets}
+          dots={<Dots />} />
+        <p className="warning">{warning}</p>
+        {!purchasedTickets && (
           <p style={{ color: '#90d371' }}>
             Checking purchase
             <Dots />
           </p>
-        )} */}
-        {/* {userHasTicket ? (
+        )}
+        {userHasTicket ? (
           <ConfirmButton
             web3={this.props.web3}
             contract={this.props.contract}
@@ -62,15 +103,15 @@ function App() {
             tickets={tickets}
             setWarning={this.getWarning}
           />
-        )} */}
-        {/* <ApplyForm
+        )}
+        <ApplyForm
           web3={this.props.web3}
           contract={this.props.contract}
           deposit={deposit}
           dots={<Dots />}
         />
         <Shares shares={shares} dots={<Dots />} />
-        <TalksAgenda talks={talks} dots={<Dots big />} /> */}
+        <TalksAgenda talks={talks} dots={<Dots big />} />
         {/* <WorkshopsAgenda agenda={""} /> */}
       </div>
     </div>
@@ -84,6 +125,7 @@ function App() {
 
   </main>
   );
+}
 }
 
 export default App;
