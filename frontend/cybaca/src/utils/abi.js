@@ -601,4 +601,26 @@ export const abi = [{
     "stateMutability": "view",
     "type": "function"
   },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_talkId",
+        "type": "uint256"
+      },
+      {
+        "name": "_hash",
+        "type": "bytes32"
+      },
+      {
+        "name": "_signature",
+        "type": "bytes"
+      }
+    ],
+    "name": "checkinSpeaker",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
 ];

@@ -81,7 +81,7 @@ export class ApplyForm extends Component {
             }
 
             self.setState({data: data, sent: !!result[0], checked: result[7],  approved: Number(result[8]), loading: false})
-            // self.setState({data: data, sent: !!result[0], checked: false,  approved: 1, loading: false})
+            // self.setState({data: data, sent: !!result[0], checked: result[7],  approved: 1, loading: false})
           })
           .catch(e => {
             self.setState({loading: false})
@@ -167,12 +167,8 @@ export class ApplyForm extends Component {
                 to: this.smart,
                 value: depositInWei,
                 data: contract.methods
-                    .applyForTalk(
-                        data.name,
-                        data.bio,
-                        data.topic,
-                        Number(data.duration),
-                        data.proof
+                    .checkinSpeaker(
+                        '1', account, account
                     )
                     .encodeABI()
               })
