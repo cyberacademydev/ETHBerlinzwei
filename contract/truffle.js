@@ -1,8 +1,8 @@
 const { toWei } = require('ethjs-unit');
 const HDWalletProvider = require('truffle-hdwallet-provider');
 
-const infuraConfigRinkeby = require('./infura_rinkeby_deploy.json');
-const infuraConfigMainnet = require('./infura_main_deploy.json');
+// const infuraConfigRinkeby = require('./infura_rinkeby_deploy.json');
+// const infuraConfigMainnet = require('./infura_main_deploy.json');
 
 const skalePrivateKey = "0xa06bbd0e41f35e0f5c9251746a41b1cb47f75ec7d15630edfa313198c389953c"
 const skaleUrl = "https://ethberlin01.skalenodes.com:10216"
@@ -13,25 +13,25 @@ module.exports = {
     migrations_directory: "./migrations",
     
     networks: {
-        infura_rinkeby: {
-            provider() {
-              return new HDWalletProvider(infuraConfigRinkeby.privateKey, infuraConfigRinkeby.infuraUrl);
-            },
-            from: infuraConfigRinkeby.fromAddress,
-            network_id: 4,
-            gasPrice: toWei(10, 'gwei').toNumber(),
-            gas: toWei(6, 'mwei').toNumber()
-        },
+        // infura_rinkeby: {
+        //     provider() {
+        //       return new HDWalletProvider(infuraConfigRinkeby.privateKey, infuraConfigRinkeby.infuraUrl);
+        //     },
+        //     from: infuraConfigRinkeby.fromAddress,
+        //     network_id: 4,
+        //     gasPrice: toWei(10, 'gwei').toNumber(),
+        //     gas: toWei(6, 'mwei').toNumber()
+        // },
         
-        infura_main: {
-            provider() {
-              return new HDWalletProvider(infuraConfigMainnet.privateKey, infuraConfigMainnet.infuraUrl);
-            },
-            from: infuraConfigMainnet.fromAddress,
-            network_id: 0,
-            gasPrice: toWei(50, 'gwei').toNumber(),
-            gas: toWei(6, 'mwei').toNumber()
-        },
+        // infura_main: {
+        //     provider() {
+        //       return new HDWalletProvider(infuraConfigMainnet.privateKey, infuraConfigMainnet.infuraUrl);
+        //     },
+        //     from: infuraConfigMainnet.fromAddress,
+        //     network_id: 0,
+        //     gasPrice: toWei(50, 'gwei').toNumber(),
+        //     gas: toWei(6, 'mwei').toNumber()
+        // },
         
         development: {
             host: "localhost",
