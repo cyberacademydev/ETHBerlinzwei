@@ -15,7 +15,9 @@
     "eth-gas-reporter": "^0.1.12",
     "ethjs-unit": "^0.1.6",
     "mocha": "^5.2.0",
+    "openzeppelin-solidity": "^2.3.0",
     "openzeppelin-test-helpers": "^0.4.2",
+    "truffle": "^5.0.33",
     "truffle-hdwallet-provider": "^1.0.16"
   }
 }

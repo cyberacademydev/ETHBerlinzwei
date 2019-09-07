@@ -2,22 +2,22 @@ import React from 'react';
 import { VictoryChart, VictoryLine, VictoryAxis, VictoryTheme } from 'victory';
 
 const orgLine=[
-  { x: 1, y: 2 },
-  { x: 2, y: 3 },
-  { x: 3, y: 5 },
-  { x: 4, y: 4 },
-  { x: 5, y: 7 }
+  { x: 1, y: 0 },
+  { x: 2, y: 20 },
+  { x: 3, y: 40 },
+  { x: 4, y: 60 },
+  { x: 5, y: 80 }
 ];
 const speakLine=[
-  { x: 1, y: 9 },
-  { x: 2, y: 8 },
-  { x: 3, y: 5 },
-  { x: 4, y: 4 },
-  { x: 5, y: 1 }
+  { x: 1, y: 80 },
+  { x: 2, y: 60 },
+  { x: 3, y: 40 },
+  { x: 4, y: 20 },
+  { x: 5, y: 0 }
 ];
 const dataLine=[
   { x: 2, y: 0},
-  { x: 2, y: 9}
+  { x: 2, y: 100}
 ];
 
 export default class Graph extends React.Component {

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import {ADRESS} from "../../utils/static";
 
 export class BuyButton extends Component {
   constructor(props) {
     super(props);
-    this.smart = '0x61B81103e716B611Fff8aF5A5Dc8f37C628efb1E';
+    // this.smart = '0x61B81103e716B611Fff8aF5A5Dc8f37C628efb1E';
+    this.smart = ADRESS;
   }
 
   buyTicket = account => {

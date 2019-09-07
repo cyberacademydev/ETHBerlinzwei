@@ -337,7 +337,7 @@ contract Cybercon is Ownable, ERC721Full {
         bytes32 _hash,
         bytes memory _signature
     )
-        external
+        public
         onlyOwner
         duringEvent
     {
@@ -348,11 +348,11 @@ contract Cybercon is Ownable, ERC721Full {
     }
 
     function checkinSpeaker(
-        uint256 _ticketId,
+        uint256 _talkId,
         bytes32 _hash,
         bytes memory _signature
     )
-        external
+        public
         onlyOwner
         duringEvent
     {
@@ -459,7 +459,6 @@ contract Cybercon is Ownable, ERC721Full {
             string memory
         )
     {
-        require(_id < uint256(speakersTalks.length), "out of index of speakers");
         for (uint256 i = 0; i < speakersTalks.length; i++){
                 if (speakersTalks[i].speakerAddress == speaker) 
                     return(
@@ -674,7 +673,7 @@ contract Cybercon is Ownable, ERC721Full {
         view
         returns(uint256)
     {
-        return SPEAKERS_START_SHARES
+        return SPEAKERS_START_SHARES;
     }
 
     function getSpeakersShares()
